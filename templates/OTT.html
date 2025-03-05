@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1><a href="{{url_for('otthistory')}}">History</a></h1>
+
+        <form method="post">
+	    <h1>Enter the Information Below to find if a Customer will Churn out or not</h1>
+	    
+    <div class="contentform">
+    	<div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+
+        
+    	<div class="leftcontact">
+			       
+            <div class="form-group">
+            <p>Age <span>*</span></p>
+            <span class="icon-case"></span>
+				<input type="number" name="Age" required="required">
+                <div class="validation"></div>
+			</div>
+
+      <div class="form-group">
+        <p>Customer Support Calls <span>*</span></p>
+        <span class="icon-case"></span>
+        <input type="number" name="Customer_Support_Calls" required="required">
+            <div class="validation"></div>
+      </div>
+
+			<div class="form-group">
+			<p>No of Days Subscribed<span>*</span></p>	
+			<span class="icon-case"></span>
+                <input type="number" name="No_of_Days_Subscribed" required="required">
+                <div class="validation"></div>
+			</div>	
+
+			<div class="form-group">
+			<p>Weekly Mins Watched<span>*</span></p>
+			<span class="icon-case"></span>
+				<input type="number" name="Weekly_Mins_Watched" required="required">
+                <div class="validation"></div>
+			</div>
+
+			<div class="form-group">
+			<p>Minimum Daily Mins<span>*</span></p>
+			<span class="icon-case"></span>
+				<input type="number" name="Minimum_Daily_Mins" required="required">
+                <div class="validation"></div>
+			</div>	
+      
+      <div class="form-group">
+        <p>Maximum Daily Mins <span>*</span></p>
+        <span class="icon-case"></span>
+          <input type="number" name="Maximum_Daily_Mins" required="required">
+                  <div class="validation"></div>
+        </div>	
+
+
+	</div>
+
+	<div class="rightcontact">	
+
+
+    <div class="form-group">
+			<p>Gender of Customer:  <span>*</span></p>	
+			<span class="icon-case"></span>
+                <select name="Gender_Male" id="resea" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+                <div class="validation"></div>
+			</div>
+      
+    <div class="form-group">
+      <p>Weekly Max Night Mins<span>*</span></p>
+      <span class="icon-case"></span>
+        <input type="number" name="weekly_max_night_mins" required="required">
+                <div class="validation"></div>
+      </div>	
+
+      <div class="form-group">
+        <p>Videos Watched <span>*</span></p>
+        <span class="icon-case"></span>
+          <input type="number" name="Videos_Watched" required="required">
+                  <div class="validation"></div>
+        </div>	
+
+        <div class="form-group">
+          <p>Maximum Days Inactive<span>*</span></p>
+          <span class="icon-case"></span>
+            <input type="number" name="Maximum_Days_Inactive" required="required">
+                    <div class="validation"></div>
+          </div>	
+
+          <div class="form-group">
+            <p>Multi Screen <span>*</span></p>
+            <span class="icon-case"></span>
+                      <select name="Multi_Screen" required="required">
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                  </select>
+                  <div class="validation"></div>
+            </div>  
+
+            <div class="form-group">
+              <p>Mail Subscribed<span>*</span></p>
+              <span class="icon-case"></span>
+                        <select name="mail_subscribed_yes" required="required">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <div class="validation"></div>
+              </div> 
+
+		
+			
+	</div>
+	</div>
+<button  type="submit " class="btn btn-lg btn-info mb-5 ml-5" style="background-color: #000;border-radius: 0%;border: none;">Predict whether the Customer will leave the platform or not?</button>
+	
+</form>	
+    
+   
+   
+
+
+        <br><br><h3 class="alert alert-primary text-center" role="alert" style="color: #000; border:none; background-color: #f44336;">{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    background-color: #f44336;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%!important;
+}
+
+ .info p {
+  text-align:center;
+  color: #999;
+  text-transform:none;
+  font-weight:600;
+  font-size:15px;
+  margin-top:2px
+}
+
+.info i {
+  color:#F6AA93;
+}
+form h1 {
+  font-size: 18px;
+  background:#000000 none repeat scroll 0% 0%;
+  color: rgb(255, 255, 255);
+  padding: 22px 25px;
+  margin: auto;
+  text-shadow: none; 
+  text-align:left
+}
+
+form {
+  max-width:800px;
+  width:100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+p span {
+  color: #F00;
+}
+
+p {
+  margin: 0px;
+  font-weight: 500;
+  line-height: 2;
+  color:#333;
+}
+
+h1 {
+  text-align:center; 
+  color: #666;
+  margin:50px 0px 0px 0px
+}
+
+input {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #eee;
+  width: 75%;
+  height: 40px;
+  float: left;
+  padding: 0px 15px;
+}
+
+a {
+  color: #000;
+  text-decoration:inherit
+}
+
+textarea {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #EEE;
+  margin: 0;
+  width: 75%;
+  height: 130px; 
+  float: left;
+  padding: 0px 15px;
+}
+
+.form-group {
+  overflow: hidden;
+  clear: both;
+}
+
+.icon-case {
+  width: 35px;
+  float: left;
+  background:#eeeeee;
+  height:40px;
+  position: relative;
+  text-align: center;
+  line-height:40px;
+}
+
+i {
+  color:#555;
+}
+
+.contentform {
+  padding: 40px 30px;
+}
+
+.bouton-contact{
+  background-color: #81BDA4;
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+  border:0;
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.ml-5, .mx-5 {
+    margin-left: 8rem!important;
+}
+
+.leftcontact {
+  width:49.5%; 
+  float:left;
+  border-right: 1px dotted #CCC;
+  box-sizing: border-box;
+  padding: 0px 15px 0px 0px;
+}
+
+.rightcontact {
+  width:49.5%;
+  float:right;
+  box-sizing: border-box;
+  padding: 0px 0px 0px 15px;
+}
+
+.validation {
+  display:none;
+  margin: 0 0 10px;
+  font-weight:400;
+  font-size:13px;
+  color: #DE5959;
+}
+
+#sendmessage {
+  border:1px solid #fff;
+  display:none;
+  text-align:center;
+  margin:10px 0;
+  font-weight:600;
+  margin-bottom:30px;
+  background-color: #EBF6E0;
+  color: #5F9025;
+  border: 1px solid #B3DC82;
+  padding: 13px 40px 13px 18px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
+}
+
+#sendmessage.show,.show  {
+  display:block;
+}
+        
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

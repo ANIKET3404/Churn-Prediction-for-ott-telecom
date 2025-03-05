@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{{ url_for('Home')}}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="{{url_for('telcom')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Telcom</a>
+    <a href="{{url_for('ott')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">OTT</a>
+    <a href="{{url_for('prevention')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Prevention</a>
+    
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">OTT</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Telecom</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">About Us</a>
+    
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">CHURN PREDICTION & PREVENTION</h1>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+        <h1>Churn Prevention</h1>
+      <h5 class="w3-padding-32">1. Analyze why churn occurs</h5>
+
+      <p class="w3-text-grey">Yes, this may sound obvious, but let’s stress it once again: you have to simply find out why customers decided to leave.
+        The easiest way to do this is to talk to the customer.
+        And by “talk”, I mean really talk: getting your customers on the phone is the best option. This way you can demonstrate that you genuinely care, and you can find out what went wrong instantly.
+        FACT: 68% of customers leave because they think a company doesn’t care about them.
+        Don’t go down the lazy path by sending the customers exit surveys; just call them up and ask why they left. This will give you the immediate, voice of customer feedback on whether or not your product solves the customers’ problems or causes trouble
+        In fact, communicating with the customers does miracles in analyzing churn. And you need to be actively using all channels for that: phone, e-mail, website, live chat, and social media. The valuable feedback on how well you serve your customers is just a phone call, an e-mail or a survey away. As simple as that.
+        
+        </p>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+  <div class="w3-content">
+       
+      <h5 class="w3-padding-32">2. Engage with your customers</h5>
+
+      <p class="w3-text-grey">Another way to prevent churn is to actively engage your customers with your product.
+        Often referred to as relationship marketing, give your customers reasons to keep coming back by showing them the day-to-day value of using your products, by making your products, services, offers, etc. a part of their daily workflow.
+        So, how can you do it?
+        For starters, provide ample and versatile content about the key functional benefits of your product and offer regular news updates, such as announcements of deals, special offers or upcoming upgrades.
+        Again, you should engage with your customers on all channels.
+        According to a recent report from Marketo, the most efficient customer engagement channels for B2B companies to reach out to their existing customer base is through email marketing.
+        
+        </p>
+    
+  </div>
+</div>
+
+
+<!-- Third Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+        
+      <h5 class="w3-padding-32">3. Educate the customer</h5>
+
+      <p class="w3-text-grey">This churn-prevention trick naturally flows from the point above.
+        You have to provide enough good quality educational or support materials, which will help increase retention and reduce churn. Offer free trainings, webinars, video tutorials, and product demos – whatever it takes to make your customers feel comfortable and informed.
+        In other words, you have to not only to give them the tools that work, but also offer the training on how to use these tools at a maximum profit. In this way you will demonstrate the full potential of your products and services, and ensure that customers have a successful onboarding and implementation.
+        
+        </p>
+  </div>
+</div>
+
+<!-- Forth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+  <div class="w3-content">
+       
+      <h5 class="w3-padding-32">4. Know who is at risk</h5>
+
+      <p class="w3-text-grey">The best way to avoid churn is to prevent it from happening in the first place, right?
+        There is always a group of customers that is more likely to leave than others – so it’s in your best interests to know who is balancing on that dangerous edge. This way you can reach out to them in time to make them stay.
+        Identifying at-risk customers is one of the most popular churn tactics for B2B companies. In fact, 35% of B2B of organizations have used this tactic to successfully reduce customer churn.
+        The good news? Spotting the ‘at-risk’ group of customers is easy. Find out which customers have not been contacted for a while. Or maybe they asked for something like a price list, a quote or just more information, and you forgot to follow up on that?
+        Knowing all this will help you become more proactive in preventing churn.
+        Also, after analyzing the reasons for churn, you become aware of certain actions, or maybe the lack of actions, that your churned customers made. This knowledge can help you foresee if someone, who is behaving similarly, is likely to leave your company soon.
+            
+        </p>
+    
+  </div>
+</div>
+
+<!-- Fifth Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+              <h5 class="w3-padding-32">5. Define your most valuable customers</h5>
+
+      <p class="w3-text-grey">As sneaky as this might sound, you’d better separate the most valuable customers from the rest and go an extra mile to make sure that at least they are getting what they have signed up for.
+        Why? Well, let’s be honest, these are the customers you want to keep the most. Valuable customers have to be taken extra care of because they bring in the biggest revenue.
+        A history of your interaction with the customers can show how deeply they are involved at each stage, whether they had any problems with the product, and whether these issues were dealt with.
+        So, what you can do is segment your customers into groups of profitability, readiness to leave, and their likelihood to positively respond to your offer to stay. In this way you can better predict customer churn.
+        
+        </p>
+  </div>
+</div>
+
+<!-- Sixth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+  <div class="w3-content">
+       
+      <h5 class="w3-padding-32">6. Offer incentives</h5>
+
+      <p class="w3-text-grey">Another advisable tip is to offer incentives, such as discounts and special offers, to those customers who were identified as likely to defect.
+        Not sure how effective this tactic is?
+        Offering incentives and discount offers is widely regarded as the most effective tactic in reducing churn.
+        But! Beware that you have correctly evaluated whether offering an incentive is beneficial for you. That means you have to be sure that the costs of your retention program do not outweigh the profits to be gained from the customers you intend to save.
+        Bottom line – you should not be wasting money on customers who are not likely to bring you substantial revenue.
+        
+        
+        </p>
+    
+  </div>
+</div>
+
+<!-- Seventh Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+      <h5 class="w3-padding-32">7. Target the right audience</h5>
+
+      <p class="w3-text-grey">No matter how sophisticated your retention tricks are, they may all go down the drain if you are attracting the wrong audience.
+
+        What I mean here is – if your first interaction with the customer is about “free” and “cheap”, then you risk attracting people who are not looking for the value you provide. These “freebie” collectors are the most likely to leave.
+        
+        It’s better to target those who appreciate the long-term value of products and see investing in good quality as an advantage. You’d better focus on those.
+        </p>
+  </div>
+</div>
+
+<!-- Eighth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+  <div class="w3-content">
+       
+      <h5 class="w3-padding-32">8. Give better service</h5>
+
+      <p class="w3-text-grey">You anticipated this tip earlier, didn’t you?
+        Yes, it is the most obvious method of keeping customers by your side. In fact, poor customer service is the leading case of customer churn. According to a Customer Experience Impact Report by Oracle, the two main reasons of why customers leave the company are incompetent and rude staff and unbearably slow service.
+        Churn because of poor service stands at 70%, according to Forum Corporation’s research.
+        By all means, do not underestimate the detrimental effect of poor customer service!
+        Studies show that 58% will never use a company again after 1 negative experience, and 48% who had negative experience will tell 10+ people about it.
+        And we are not talking here about really bad service. Sometimes an average customer experience, or what can be called a “meh” experience, is a trigger for churn. You simply showed nothing to hook that customer on.
+        So, make sure that you provide “best in class” customer service that makes customers, above all, happy.
+        
+        
+        </p>
+    
+  </div>
+</div>
+
+
+<!-- Ninth Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+        
+      <h5 class="w3-padding-32">9. Pay attention to complaints</h5>
+
+      <p class="w3-text-grey">Complaints are like tips of the icebergs – they suggest that the bigger part of the problem is hidden from the view.
+
+        Did you know that 96% of unhappy customers don’t complain, and 91% of those will simply leave and never come back?Are you also aware that it takes only 1 negative experience to make 32% of customers stop doing business with a brand they once loved?
+
+        So, you’d better take complaints seriously and act on them, and in this way prevent customer churn, because, as Strauss & Seidel claims, dissatisfied customers whose complaints are attended to are more likely to remain loyal, and even become advocates, than other average customers.
+        </p>
+  </div>
+</div>
+
+<!-- Tenth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+  <div class="w3-content">
+       
+      <h5 class="w3-padding-32">10. Make your best people deal with cancellations</h5>
+
+      <p class="w3-text-grey">To save a customer who is about to churn is certainly not mission impossible.
+
+        But you will have to call on your best sales experts to achieve good results in keeping them.
+        
+        Find out who your best, most vocal and convincing B2B sales reps are and give them the task to talk to those who decided to leave, and in this way – prevent customer churn. At this point, you can certainly make use of their charisma and experience in dealing with difficult situations and dissatisfied customers.
+        
+        Sometimes it only takes a good listener who is eager to walk in the customers’ shoes to change things around. According to the customer satisfaction survey conducted by Customer Service Group, the majority of respondents said that being heard and respected are more important than having their issue resolved.
+        </p>
+    
+  </div>
+</div>
+
+<!-- Eleventh Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+        
+      <h5 class="w3-padding-32">11. Flaunt your competitive advantages</h5>
+
+      <p class="w3-text-grey">How different are you from your competitors? What makes you stand out? What will your customers lose if they decide to quit?
+
+        Answering these questions will help you define your competitive advantages and then flaunt them more. Competitive advantages are like honey that glues your customers to you. Analyze what it is that you do better or what makes you unique. Now think – do your customers know about it?
+        
+        If not, it might be high time you told them.
+        </p>
+  </div>
+</div>
+
+<!-- Twelfth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
+  <div class="w3-content">
+       
+      <h5 class="w3-padding-32">12. Offer long term contracts</h5>
+
+      <p class="w3-text-grey">Finally, how about extending your customers’ commitment?
+
+        Instead of the month-to-month contracts, try offering a longer subscription model. In such a way your customers will have enough time to implement the product and see the benefits of using it. And once they see the benefits, they are more likely to commit to the product.
+        </p>
+    
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+      .w3-top{
+        z-index: 2;
+      }
+      .center1{
+        width: 80%;
+        z-index: 1;
+        margin-top: 50px;
+        padding: 40px;
+      }
+table {
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+    tbody{
+      border-bottom: 1px solid black;
+    }
+    
+    th, td {
+      /* border: 1px solid black; */
+      padding: 6px;
+      font-size: 150%;
+      /* white-space: nowrap; */
+      text-align: center; /* Align text in the center */
+      text-justify: distribute-all-lines; /*Justify text*/
+      /* text-align-last: justify; Justify the last line */
+      /* white-space: nowrap; */
+    }
+
+        
+    </style>
+</head>
+<body>
+    
+    <div class="w3-top">
+        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+          <a href="{{ url_for('Home')}}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+          <a href="{{ url_for('ott')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">OTT</a>
+          <a href="{{ url_for('telcom')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Telecom</a>  
+        </div>
+      </div>
+        <h1>{{not_found}}</h1>
+        
+        <div class="center1" style="text-align: center; margin: auto;">
+            
+              <table>
+                {% for dat in data %}
+                <tbody>
+                  <tr>
+                    <td>Age={{ dat[0]}}</td>
+                    <td>No Of Days Sub={{ dat[1]}}</td>
+                  </tr>
+                  <tr>
+                    <td>Weekely Mins Watched={{ dat[2]}}</td>
+                    <td>Minimum Daily Mins={{ dat[3]}}</td>
+                  </tr>
+                  <tr>
+                    <td>Maximum Daily Mins={{ dat[4]}}</td>
+                    <td>Gender Of Customer={{ dat[9]}}</td>
+                  </tr>
+                  <tr>
+                    <td>Weekly Max Night Mins={{ dat[5]}}</td>
+                    <td>Videos Watched={{ dat[6]}}</td>
+                  </tr>
+                  <tr>
+                    <td>MaximumDaysInactive={{ dat[7]}}</td>
+                    <td>Multi Screen={{ dat[8]}}</td>
+                  </tr>
+                  <tr>
+                    <td>MailSubscribed={{ dat[9]}}</td>
+                    <td>Churn Prediction={{dat[11]}}</td>
+                  </tr>
+                </tbody>
+                {% endfor %}
+              </table>
+
+              
+        
+        </div>
+           
+    
+</body>
+</html>

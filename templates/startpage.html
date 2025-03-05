@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Churn Prediction</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  html{
+    scroll-behavior: smooth;
+  }
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top"> 
+   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    {%if session['user_id']%}
+            <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Logout</a>
+      {%else%}
+           <a href="{{url_for('login')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a>
+           <a href="{{ url_for('register')}}" class="w3-bar-item w3-button w3-padding-large">Register</a>
+       {% endif %}
+    <a href="{{ url_for('Home')}}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="{{url_for('telcom')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Telcom</a>
+    <a href="{{url_for('ott')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">OTT</a>
+    <a href="{{url_for('prevention')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Prevention</a>
+    
+  </div>
+
+  <!-- Navbar on small screens -->
+  <!-- <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">OTT</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Telecom</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">About Us</a>
+    <a href="{{ url_for('register')}}" class="w3-bar-item w3-button w3-padding-large">Register</a>
+    <a href="{{ url_for('login')}}" class="w3-bar-item w3-button w3-padding-large">Login</a>
+    
+  </div> -->
+ </div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">CHURN PREDICTION</h1>
+  
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Churn Prediction</h1>
+      <h5 class="w3-padding-30">"Churn prediction and prevention for OTT/Telecommunication" refers to the process of predicting and preventing customer churn within the context of Over-The-Top (OTT) or Telecommunication services.</h5>
+
+      <p class="w3-text-grey">The goal of churn prediction is to develop models or algorithms that can accurately predict which customers are likely to churn in the future. This can be done by analyzing various customer-related factors such as usage patterns, subscription details, customer demographics, complaints, customer service interactions, and other relevant data. Once churn prediction models are developed, preventive measures can be taken to retain customers and reduce churn. These measures can include targeted marketing campaigns, personalized offers, improved customer service, loyalty programs, and proactive customer engagement strategies.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+      <!--<img src="churn-reduction-300x298.jpg"></img>-->
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Churn Prevention</h1>
+      <h5 class="w3-padding-30">Churn prevention refers to the set of strategies, actions, and measures taken by businesses to reduce customer churn. Customer churn, also known as customer attrition or customer turnover, occurs when customers discontinue using a product or service and switch to a competitor or simply stop using the product/service altogether.</h5>
+
+    <p class="w3-text-grey">Churn prevention focuses on retaining existing customers and minimizing the number of customers who leave or unsubscribe from a product or service. This is important because acquiring new customers can be more costly and challenging compared to retaining existing ones.Customer retention programs: Implementing loyalty programs, special offers, discounts, or rewards to incentivize customers to stay and continue using the product or service.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer 
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ 
+</footer> -->
+
+
+
+</body>
+</html>
